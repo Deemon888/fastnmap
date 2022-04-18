@@ -26,7 +26,7 @@ else
 echo "options: Y|y|N|n"
 exit
 fi
-
+fi
 echo "Ntest"|figlet
 sleep 1
 echo ""
