@@ -30,16 +30,16 @@ fi
 echo "Ntest"|figlet
 sleep 1
 echo ""
-read -p "input your scan mode(s): " $SCANMODES
+read -p "input your scan mode(s): " SM
 
 sleep 1
 echo ""
-read -p "input a ip or ip range: " $IPR
+read -p "input a ip or ip range: " IP
 echo ""
 echo "running commands"
 sleep 1
 clear
 
-sudo nmap $SCANMODES $IPR
+sudo nmap $SM $IP
 
 # just a update
