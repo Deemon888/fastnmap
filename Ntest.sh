@@ -1,30 +1,45 @@
 #!/bin/bash
 
-# this bash script is just for testing and for others to test and make better
-# this will be nmap script for ethical hacking and scaning ips
+# u need nmap to run this script
 
-echo "enter ip or listing ip"
-read IP
-
-echo "enter scan mode"
-read SCANMODE
-
-# by the way this is only a nmap basic scan script for a fun fast scan
-# example : nmap -sL IP 
-# SIMPLE RIGHT
-
-# U need nmap for this script; run sudo apt install nmap
-
-echo "do you want to run command: nmap $SCANMODE $IP (Y or n)"
-read ANSWER
-
-if [ "$ANSWER" != "${ANSWER#[Yy]}" ]; then
-           echo "running command now"
-           nmap $SCANMODE $IP
+clear
+if grep -q "nmap" ~/.bash_history; then
+sleep 1
+echo "it seems you have nmap installed..."
+sleep 1
+clear
 else
-           echo "aborting"
-           exit
+sleep 1
+echo -n "it seems you do not have nmap installed, do you want to install it?(Y or n): "
+read yorn
+if [[ "$yorn" == "Y" ]]; then
+sudo apt install nmap
+elif [[ "$yorn" == "y" ]]; then
+sudo apt install nmap
+elif [[ "$yorn" == "N" ]]; then
+echo "cant run this script..."
+exit
+elif [[ "$yorn" == "n" ]]; then
+echo "cant run this script..."
+exit
+else
+echo "options: Y|y|N|n"
+exit
 fi
 
-# like I says.............not advanced script
-# finished in 10 mins
+echo "Ntest"|figlet
+sleep 1
+echo ""
+read -p "input your scan mode(s): " $SCANMODES
+
+sleep 1
+echo ""
+read -p "input a ip or ip range: " $IPR
+echo ""
+echo "running commands"
+sleep 1
+clear
+
+sudo nmap $SCANMODES $IPR
+
+# just a update
