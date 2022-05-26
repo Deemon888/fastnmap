@@ -71,5 +71,5 @@ usage2 : [mode] [target] [port]
         S    - silent
         vuln - vulnerabily check
         os   - os scan
-        list - list ranges
+        list - list ranges"""
 esac
